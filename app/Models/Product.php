@@ -9,4 +9,14 @@ class Product extends Model
 {
     use HasFactory;
     protected $fillable = ['name', 'color_id', 'memory', 'storage', 'display_diagonal', 'os'];
+
+    public function color()
+    {
+        return $this->belongsTo(Color::class);
+    }
+
+    public function company()
+    {
+        return $this->belongsTo(Company::class);
+    }
 }

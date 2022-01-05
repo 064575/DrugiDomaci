@@ -19,7 +19,8 @@ class ProductFactory extends Factory
             "memory" => $this->faker->numberBetween(512, 8096),
             "storage" => $this->faker->numberBetween(16, 128),
             "display_diagonal" => $this->faker->randomFloat(1, 4, 7),
-            "os" => $this->faker->word
+            "os" => $this->faker->word,
+            "company_id" => $this->faker->numberBetween(1, 10)
         ];
     }
 }
