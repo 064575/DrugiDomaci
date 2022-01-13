@@ -20,7 +20,7 @@ use Illuminate\Support\Facades\Hash;
 Route::post('login', function (Request $request) {
     $user = User::where('email', $request->email)->first();
     if (!$user || !Hash::check($request->password, $user->password)) {
-        return response("Failed login", 401);
+        return response("Failed login", 400);
     }
     return $user->createToken($user->id)->plainTextToken;
 });
